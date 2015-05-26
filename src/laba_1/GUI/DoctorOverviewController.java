@@ -203,5 +203,4 @@ public class DoctorOverviewController extends UnicastRemoteObject implements Cli
         mainApp.getPrimaryStage().setScene(new Scene(stackpane));
         mainApp.getPrimaryStage().show();
     }
-
 }

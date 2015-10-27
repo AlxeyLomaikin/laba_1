@@ -457,7 +457,7 @@ public class medServerImpl extends UnicastRemoteObject implements medServer {
                 Node nNode = nList.item(temp);
                 if (nNode.getNodeType() == Node.ELEMENT_NODE) {
                     Element el = (Element) nNode;
-                    el.setAttribute("id", String.valueOf(temp));
+                    el.setAttribute("id", String.valueOf(temp+1));
                     String name = el.getElementsByTagName("name").item(0).getTextContent();
                     String surname = el.getElementsByTagName("surname").item(0).getTextContent();
                     String occupation = el.getElementsByTagName("occupation").item(0).getTextContent();
@@ -467,9 +467,9 @@ public class medServerImpl extends UnicastRemoteObject implements medServer {
                     doctors.add(doctor);
                     this.freeID = (temp + 2);
                 }
-                //переписываем файл для синхронизации с данными на сервере
-                WiriteDOMDoc(doc);
             }
+            //переписываем файл для синхронизации с данными на сервере
+            WiriteDOMDoc(doc);
         }
     }
 }
